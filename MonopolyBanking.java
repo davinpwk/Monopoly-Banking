@@ -1,7 +1,7 @@
 package monopolybanking;
 import java.util.Scanner;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
+
 /**
  * April 2022
  * @author davinpwk
@@ -40,7 +40,7 @@ public class MonopolyBanking {
     public static void menu(){
         System.out.println("\n=================================");
         System.out.println("Menu: ");
-        System.out.println("1. Income \n2. Taxes \n3. Transfer \n4. GO! (+$200) \n*'end' to terminate\n.......");
+        System.out.println("1. Income \n2. Taxes \n3. Transfer \n4. GO! (+$200) \n*'bal' to check Balance \n*'end' to terminate\n.......");
         System.out.print("option : ");
         Scanner menu = new Scanner(System.in);
         String option = menu.nextLine();
@@ -69,9 +69,17 @@ public class MonopolyBanking {
             String Player = Ptrans.nextLine();
             GO(Player);
         }
+        else if(option.equals("bal")){
+            checkBalance();
+        }
         else if(option.equals("end")){
             loop = false;
         }
+    }
+    
+    public static void checkBalance(){
+        System.out.print(account);
+        wait(5000);
     }
     
     public static void income(String Player){
